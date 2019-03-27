@@ -16,3 +16,14 @@ a:visited {
     text-decoration: none;
     color: teal;
 }
+
+.slider {
+    width: 700px;
+    height: 700px;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%
+}
