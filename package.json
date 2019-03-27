@@ -4,7 +4,8 @@
   "description": "for hero picture module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel . --out-dir compiled --presets=react --ignore=node_modules,compiled --source-maps inline --watch"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,8 @@
     "react-dom": "^16.8.5"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "webpack": "^4.29.6"
+    "babel-cli": "^6.26.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }
