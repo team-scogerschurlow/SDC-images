@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
+import Slide from './slide';
+import RightArrow from './RightArrow';
+import LeftArrow from './LeftArrow';
 
 
 class Slider extends React.Component {
@@ -14,6 +17,11 @@ class Slider extends React.Component {
     render () {
         return (
             <div className="slider">
+            <Slide />
+            
+            
+            <LeftArrow />
+            <RightArrow />
 
             </div>
         );

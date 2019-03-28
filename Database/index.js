@@ -15,4 +15,11 @@ connection.connect(function(err){
 
 
 module.exports = connection;
- 
+
+
+// psql <dbname> (to access DB)
+// \l (shows all databases)
+// \c <database name> (connects to database)
+// \dt (shows all tables)
+// TABLE <tablename> (shows table)
+// \q quits out of psql
