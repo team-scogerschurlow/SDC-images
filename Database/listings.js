@@ -1,4 +1,4 @@
 module.export = [
-    {id: 1, name: 'FunHouse'},
-    {id: 2, name: 'FlopHouse'}
+    { name: 'FunHouse'},
+    { name: 'FlopHouse'}
 ]
