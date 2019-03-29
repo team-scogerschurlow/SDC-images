@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Slider from './Slider.jsx';
 import Axios from 'axios';
 
 class Hero extends React.Component {
@@ -13,8 +14,9 @@ class Hero extends React.Component {
     render() {
         return (
             <div>
-                <h2>It will never be game over</h2>
-                <a href="https://imgur.com/RV6dmw0"><img src="https://i.imgur.com/RV6dmw0.jpg" title="source: imgur.com" /></a>
+                {/* <h2>It will never be game over</h2> */}
+                <Slider />
+
             </div>
         )
     }
