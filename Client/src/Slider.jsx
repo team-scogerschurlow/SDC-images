@@ -26,18 +26,12 @@ class Slider extends React.Component {
 
     }
     goToPrevSlide () {
-        if(this.state.currentIndex === this.state.images.length + 1) {
-            return this.setState({
-                currentIndex: 0,
-                translateValue: 0
-
-            })
-        }
-        this.setState = (prevState => ({
+        
+        if(this.state.currentIndex === 0) return;
+        this.setState(prevState => ({
             currentIndex: prevState.currentIndex - 1,
-            translateValue: prevState.translateValue + -(this.slideWidth())
-
-        }))
+            translateValue: prevState.translateValue + this.slideWidth()
+          }))
 
     }
 

@@ -14,7 +14,7 @@ class Hero extends React.Component {
     render() {
         return (
             <div>
-                {/* <h2>It will never be game over</h2> */}
+                <h2>It will never be game over</h2>
                 <Slider />
 
             </div>
