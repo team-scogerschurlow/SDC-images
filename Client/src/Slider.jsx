@@ -13,6 +13,13 @@ class Slider extends React.Component {
         this.state = {};
 
     }
+    goToPrevSlide = () => {
+
+    }
+
+    goToNextSlide = () => {
+
+    }
 
     render () {
         return (
@@ -20,8 +27,8 @@ class Slider extends React.Component {
             <Slide />
             
             
-            <LeftArrow />
-            <RightArrow />
+            <LeftArrow goToPrevSlide={this.goToPrevSlide} />
+            <RightArrow goToNextSlide={this.goToNextSlide} />
 
             </div>
         );

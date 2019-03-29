@@ -13,7 +13,7 @@ class Hero extends React.Component {
     render() {
         return (
             <div>
-                <h2>It will never be gfsadfasdfasdame over</h2>
+                <h2>It will never be game over</h2>
                 <a href="https://imgur.com/RV6dmw0"><img src="https://i.imgur.com/RV6dmw0.jpg" title="source: imgur.com" /></a>
             </div>
         )
