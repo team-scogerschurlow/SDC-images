@@ -27,6 +27,7 @@ class Slider extends React.Component {
 
     componentDidMount () {
         this.loadPics(25);
+       setTimeout(console.log(this.state), 50000) 
 
     }
     
@@ -34,6 +35,8 @@ class Slider extends React.Component {
 
         axios.get(`/heroes/${listingId}`)
         .then( res => this.setState({images: res.data})
+        
+
          )
         .catch(
          (err) => {console.log(err)}
@@ -116,9 +119,23 @@ class Slider extends React.Component {
        if (this.state.view === false) {
            return (
             <div className="lander" onClick={this.changeView}>
-            <div className="exterior">
-           
-            <img alt="Exterior Photo" src={this.state.images.url}></img>
+            <div className="lander-wrapper">
+            {
+                this.state.images.map((image, i) => (
+                    <Slide key={i} image={image.url}/>
+
+                ))
+            
+            }
+            
+            
+            {/* {this.state.images.map((i, image) => 
+            
+                <img className="main-photo" alt="Exterior Photo"  src={this.image}></img>
+                // <img className="side-photo" alt="Side Photo" src={this.image}></img>
+            )}
+             */}
+         
             </div>
 
 

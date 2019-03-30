@@ -31,6 +31,13 @@ a:visited {
     height: 100%;
     width: 100%;
   }
+
+  .lander-wrapper {
+    display: inline-block;
+    position: top;
+    height: 50%;
+    width: 50%;
+  }
   
   .slide {
     display: inline-block;
