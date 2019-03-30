@@ -65,7 +65,20 @@ a:visited {
     z-index: 999;
     color: #fff;
   }
+
+  .skull {
+    position: absolute;
+    top: 5%;
+    right: 25px;
+    z-index: 999;
+    color: #222;
+    font-size: 30px;
+  }
   
+  .bigger {
+    width: 100px;
+  }
+
   .fa-arrow-right:before, .fa-arrow-left:before {
     color: #222
   }

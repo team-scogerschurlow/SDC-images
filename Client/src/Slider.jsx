@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Axios from 'axios';
+import axios from 'axios';
 import Slide from './Slide.jsx';
 import RightArrow from './RightArrow.jsx';
 import LeftArrow from './LeftArrow.jsx';
+import Skull from './skull.jsx';
 
 
 class Slider extends React.Component {
@@ -11,20 +12,44 @@ class Slider extends React.Component {
         super(props);
 
         this.state = {
-            images: ["https://i.imgur.com/M4YeUei.jpg",
-                     "https://i.imgur.com/BXWwCKd.jpg",
-                     "https://i.imgur.com/zstzmyJ.jpg",
-                     "https://i.imgur.com/xfNXg6a.jpg",
-                     "https://i.imgur.com/cLpJWYR.jpg"
-        
-                     ],
+            images: [],
+            listing: '',
             currentIndex: 0,
-            translateValue: 0
+            translateValue: 0,
+            view: false
         };
         this.goToNextSlide = this.goToNextSlide.bind(this);
         this.goToPrevSlide = this.goToPrevSlide.bind(this);
+        this.loadPics = this.loadPics.bind(this);
+        this.changeView = this.changeView.bind(this);
 
     }
+
+    componentDidMount () {
+        this.loadPics(25);
+
+    }
+    
+    loadPics (listingId) {
+
+        axios.get(`/heroes/${listingId}`)
+        .then( res => this.setState({images: res.data})
+         )
+        .catch(
+         (err) => {console.log(err)}
+        ) 
+        
+
+
+    }
+
+    changeView (e) {
+        this.setState(prevState => ({
+            view: !prevState.view
+        }))
+
+    }
+    
     goToPrevSlide () {
         
         if(this.state.currentIndex === 0) return;
@@ -58,8 +83,8 @@ class Slider extends React.Component {
     }
 
     render () {
-        return (
-            <div className="slider">
+       if (this.state.view === true) { return (
+            <div className="slider" >
               <div className="slider-wrapper"
               style={{
                 transform: `translateX(${this.state.translateValue}px)`,
@@ -67,7 +92,7 @@ class Slider extends React.Component {
               }}>
             {
                 this.state.images.map((image, i) => (
-                    <Slide key={i} image={image}/>
+                    <Slide key={i} image={image.url}/>
 
                 ))
             
@@ -81,11 +106,38 @@ class Slider extends React.Component {
             goToNextSlide={this.goToNextSlide} 
             />
 
+            <Skull 
+            changeView={this.changeView} 
+            />
+
             </div>
         );
+       } 
+       if (this.state.view === false) {
+           return (
+            <div className="lander" onClick={this.changeView}>
+            <div className="exterior">
+           
+            <img alt="Exterior Photo" src={this.state.images.url}></img>
+            </div>
+
+
+
+          </div>
+           )
+       }
     }
+
     
     
 }
 
 export default Slider
+
+/*"https://i.imgur.com/M4YeUei.jpg",
+                     "https://i.imgur.com/BXWwCKd.jpg",
+                     "https://i.imgur.com/zstzmyJ.jpg",
+                     "https://i.imgur.com/xfNXg6a.jpg",
+                     "https://i.imgur.com/cLpJWYR.jpg"
+        
+        */
