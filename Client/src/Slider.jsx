@@ -119,6 +119,7 @@ class Slider extends React.Component {
        if (this.state.view === false) {
            return (
             <div className="lander" onClick={this.changeView}>
+            <image src={this.state.images[0]}></image>
             <div className="lander-wrapper">
             {
                 this.state.images.map((image, i) => (
