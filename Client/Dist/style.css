@@ -32,11 +32,21 @@ a:visited {
     width: 100%;
   }
 
+  .lander {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 500px;
+  }
+
   .lander-wrapper {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    width: 500px;
+
     position: top;
-    height: 50%;
-    width: 50%;
+
   }
   
   .slide {
