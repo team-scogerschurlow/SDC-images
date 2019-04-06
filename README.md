@@ -69,6 +69,12 @@ for more info
 (https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 
+  // "react": "^16.8.5",
+    // "react-dom": "^16.8.5",
+
+    transform: scale(0.7)
+
+
 
 
 

@@ -5,6 +5,7 @@ import Slide from './Slide.jsx';
 import RightArrow from './RightArrow.jsx';
 import LeftArrow from './LeftArrow.jsx';
 import Skull from './skull.jsx';
+import Hero from './hero.jsx';
 
 
 class Slider extends React.Component {
@@ -26,7 +27,7 @@ class Slider extends React.Component {
     }
 
     componentDidMount () {
-        this.loadPics(2);
+        this.loadPics(45);
        setTimeout(console.log(this.state), 50000) 
 
     }
@@ -118,17 +119,20 @@ class Slider extends React.Component {
        } 
        if (this.state.view === false) {
            return (
-            <div className="lander" onClick={this.changeView}>
-            <image src={this.state.images[0]}></image>
-            <div className="lander-wrapper">
+            // <div className="lander" onClick={this.changeView}>
+            <div className="lander-wrapper" onClick={this.changeView}>
             {
                 this.state.images.map((image, i) => (
-                    <Slide key={i} image={image.url}/>
+                    // <div className='hero' key={i}><img src={image.url} alt=""/></div>
+                    <Hero key={i} image={image.url}/>
+                    // <p key={i}><img src={image.url} alt=""/></p>
+
 
                 ))
             
             }
-            
+            {/* <p><img src="http://lorempixel.com/189/324/" alt=""/></p> */}
+
             
             {/* {this.state.images.map((i, image) => 
             
@@ -141,7 +145,7 @@ class Slider extends React.Component {
 
 
 
-          </div>
+        //   </div>
            )
        }
     }
