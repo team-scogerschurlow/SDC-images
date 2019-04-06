@@ -25,6 +25,7 @@ a:visited {
     overflow: hidden;
     background: #222;
     white-space: nowrap;
+    /* opacity: 0.5; */
   }
   
   .slider-wrapper {
@@ -34,7 +35,7 @@ a:visited {
   }
 
   .lander {
-    height: 600px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -43,7 +44,7 @@ a:visited {
   }
 
   .lander-wrapper {
-    min-height: 100%;
+    /* min-height: 100%; */
     display: inline-flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -52,19 +53,28 @@ a:visited {
     width: 100%;
     margin: 1 auto;
     position: top; 
+    /* transition: all .2s ease-in-out; */
+
 
   }
 
-  .lander-wrapper div:first-child {
+  /* to add
+
+      cursor: pointer !important; to parent
+
+  
+  */
+
+  /* .lander-wrapper div:first-child {
     display: inline-flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row; */
     /* flex-basis: 50%; */
-    align-self: stretch;
-     /* height: 400px;
-    width: 400px;   */
+    /* align-self: stretch; */
+     /* height: 100%; */
+    /* width: 50%;   */
 
-   }
+   /* } */
 
    .hero {
     display: inline-flex;
@@ -75,9 +85,28 @@ a:visited {
     /* flex: 0 1 250px; */
     border: 1px solid grey;
     height: 190px;
-    width: 250px;
+    width: 33%;
+    /* transition: all .2s ease-in-out; */
+    transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    transform: scale(1);
   }
- 
+  .lander-wrapper:hover > div {
+    opacity: 0.7;
+
+
+  }
+  .lander-wrapper:hover > div:hover {
+    opacity: 1
+
+
+  }
+  
+  .hero:hover {
+    transform: scale(1.05);
+        opacity: 1;
+
+  }
+  
  
   
   .slide {
