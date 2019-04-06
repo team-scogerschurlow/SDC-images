@@ -8,7 +8,7 @@ const Hero = ({ image }) => {
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: '25%'
+        backgroundPosition: '50%'
     }
     return <div className="hero" style={styles}></div>
 }
