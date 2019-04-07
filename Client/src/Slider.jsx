@@ -8,6 +8,7 @@ import Skull from './skull.jsx';
 import Hero from './hero.jsx';
 
 
+
 class Slider extends React.Component {
     constructor(props) {
         super(props);
