@@ -28,7 +28,7 @@ class Slider extends React.Component {
     }
 
     componentDidMount () {
-        this.loadPics(45);
+        this.loadPics(31);
        setTimeout(console.log(this.state), 50000) 
 
     }
@@ -123,12 +123,16 @@ class Slider extends React.Component {
        if (this.state.view === false) {
            return (
             // <div className="lander" onClick={this.changeView}>
-            <div className="lander-wrapper" onClick={this.changeView}>
+            <div className="hero-main" onClick={this.changeView}>
+            { this.state.images.length > 0 &&
+            <Hero left={true} image={this.state.images[0].url} />}
+            <div className="hero-right">
             {
-                this.state.images.map((image, i) => (
+                this.state.images.slice(1).map((image, i) => (
                     <Hero key={i} image={image.url}/>
                 ))    
             }
+            </div>
             </div>
         //   </div>
            )
