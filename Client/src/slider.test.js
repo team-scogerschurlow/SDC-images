@@ -25,8 +25,6 @@ import Skull from './skull'
       expect(instance.loadPics.toHaveBeenCalled);
     })
 
-
-
     it('Does not show the editor', () => {
 	    const component = mount(
 	    	<Slider/>
@@ -83,19 +81,5 @@ import Skull from './skull'
 	    expect(component.find('.skull').length).toBeGreaterThan(0);
     });
 
-    // it('should change state/view', () => {
-    //   const wrapper = shallow(<Skull />);
-    //   expect(wrapper.setState({view: false}))
-    //   });
-  
-    // it('should call a function on mount', () => {
-    //   const derr = function (){
-    //     console.log('hello')
-    //   };
-    //   const wrapper = mount(<Slider  />);
-    //   // console.log(wrapper.debug())
-    //   wrapper.derr();
-    //   expect(derr).toBeCalled();
-    // });
 
 });
