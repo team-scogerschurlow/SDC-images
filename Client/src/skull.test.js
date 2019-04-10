@@ -23,6 +23,21 @@ describe('Examining the syntax of Jest tests', () => {
       expect(wrapper.children()).toHaveLength(1);
     });
    
+    it('should render a .skull', () => {
+      const wrapper = shallow(<Skull />);
+      expect(wrapper.find('.skull')).toHaveLength(1);
+    });
+
+    // it('should change state/view', () => {
+    //   const wrapper = shallow(<Skull />);
+    //   wrapper.find('a').invoke(changeView)().then(()=> {
+    //   expect(wrapper.setState({view: false}))
+    //   })
+    
+
+
+
+
    
 
     // it('Should change view and update form state', () => {

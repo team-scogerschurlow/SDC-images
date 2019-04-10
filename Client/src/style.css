@@ -23,10 +23,7 @@ a:visited {
   height: 700px;
   width: 100%;
   background-color: rgb(5, 5, 5);
-  /* opacity: 0.5; */
   cursor: pointer;
-
-
 }
 
 .slider {
@@ -38,9 +35,6 @@ a:visited {
     background: #222;
     white-space: nowrap;
     cursor: pointer;
-
-
-    /* opacity: 0.5; */
   }
   
   .slider-wrapper {
@@ -51,84 +45,60 @@ a:visited {
 
   }
 
-  .lander {
-    height: 500px;
+  .hero-main {
+    height: 400px;
+    display: flex;
+    
+  }
+
+  .hero-left {
+    box-sizing: border-box;
+    width: 50%;
+    border: 1px solid grey;
+
+  }
+
+  .hero-right {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    /* height: 600px; */
-    width: 100%;
-  }
-
-  .lander-wrapper {
-    /* min-height: 100%; */
-    display: inline-flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: flex-start;
-    height: 420px;
-    width: 100%;
-    margin: 1 auto;
-    position: top; 
+    width: 50%;
     cursor: pointer;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-
-    /* transition: all .2s ease-in-out; */
-
-
   }
 
-  /* to add
-
-      cursor: pointer !important; to parent
-
-  
-  */
-
-  /* .lander-wrapper div:first-child {
-    display: inline-flex;
+  .hero {
+    box-sizing: border-box;
+    display: flex;
     flex-wrap: wrap;
-    flex-direction: row; */
-    /* flex-basis: 50%; */
-    /* align-self: stretch; */
-     /* height: 100%; */
-    /* width: 50%;   */
-
-   /* } */
-
-   .hero {
-    display: inline-flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-self: stretch;
-    /* flex: 1 1 0; */
-    /* flex: 0 1 250px; */
     border: 1px solid grey;
-    height: 190px;
-    width: 33%;
-    /* transition: all .2s ease-in-out; */
+    width: 50%;
     transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     transform: scale(1);
   }
-  .lander-wrapper:hover > div {
+  .hero-main:hover > div {
     opacity: 0.7;
-
-
   }
-  .lander-wrapper:hover > div:hover {
+  .hero-main:hover > div:hover {
     opacity: 1
-
-
   }
-  
-  .hero:hover {
-    display: inline-block;
+  .hero-right:hover > div {
+    opacity: 0.7;
+  }
+  .hero-right:hover > div:hover {
+    opacity: 1
+  }
+
+  .hero-left:hover {
     transform: scale(1.01);
         opacity: 1;
 
   }
   
- 
+  .hero:hover {
+    transform: scale(1.01);
+        opacity: 1;
+
+  }
   
   .slide {
     display: inline-block;
