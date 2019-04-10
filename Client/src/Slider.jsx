@@ -88,6 +88,7 @@ class Slider extends React.Component {
 
     render () {
        if (this.state.view === true) { return (
+            <div className="overlay">
             <div className="slider" >
               <div className="slider-wrapper"
               style={{
@@ -101,6 +102,7 @@ class Slider extends React.Component {
                 ))
             
             }
+            </div>
             </div>
             <LeftArrow 
             goToPrevSlide={this.goToPrevSlide} 
@@ -123,28 +125,10 @@ class Slider extends React.Component {
             <div className="lander-wrapper" onClick={this.changeView}>
             {
                 this.state.images.map((image, i) => (
-                    // <div className='hero' key={i}><img src={image.url} alt=""/></div>
                     <Hero key={i} image={image.url}/>
-                    // <p key={i}><img src={image.url} alt=""/></p>
-
-
-                ))
-            
+                ))    
             }
-            {/* <p><img src="http://lorempixel.com/189/324/" alt=""/></p> */}
-
-            
-            {/* {this.state.images.map((i, image) => 
-            
-                <img className="main-photo" alt="Exterior Photo"  src={this.image}></img>
-                // <img className="side-photo" alt="Side Photo" src={this.image}></img>
-            )}
-             */}
-         
             </div>
-
-
-
         //   </div>
            )
        }
