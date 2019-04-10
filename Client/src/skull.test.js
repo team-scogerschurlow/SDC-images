@@ -12,5 +12,38 @@ describe('Examining the syntax of Jest tests', () => {
      });
   });
 
+  function setup() {
+    const wrapper = shallow(<Skull />);
+    return { wrapper };
+  }
+  
+  describe('Skull', () => {
+    it('Should render', () => {
+      const { wrapper } = setup();
+      expect(wrapper.children()).toHaveLength(1);
+    });
+   
+   
+
+    // it('Should change view and update form state', () => {
+    //   const { wrapper } = setup();
+    //   const event = {
+    //     target: { name: 'username', value: 'testvalue' },
+    //   };
+    //   wrapper.instance().onHandleChangeForm(event);
+    //   wrapper.update();
+    //   expect(wrapper.state().form.username).toBe('testvalue');
+    // });
+    // it('Should call onToggleSnackbar & set snackbar to true', () => {
+    //   const { wrapper } = setup();
+    //   wrapper.instance().onToggleSnackbar({ message: 'test' });
+    //   wrapper.update();
+    //   const el = wrapper.find('WithStyles(Snackbar)');
+    //   expect(el.prop('open')).toBe(true);
+    // });
+
+  });
+
+  
 
 //  const wrapper = shallow(<Foo />);
