@@ -16,6 +16,18 @@ a:visited {
     text-decoration: none;
     color: teal;
 }
+.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 700px;
+  width: 100%;
+  background-color: rgb(5, 5, 5);
+  /* opacity: 0.5; */
+  cursor: pointer;
+
+
+}
 
 .slider {
     position: relative;
@@ -25,6 +37,9 @@ a:visited {
     overflow: hidden;
     background: #222;
     white-space: nowrap;
+    cursor: pointer;
+
+
     /* opacity: 0.5; */
   }
   
@@ -32,6 +47,8 @@ a:visited {
     position: relative;
     height: 100%;
     width: 100%;
+    cursor: pointer;
+
   }
 
   .lander {
@@ -49,10 +66,13 @@ a:visited {
     flex-wrap: wrap;
     flex-direction: row;
     align-content: flex-start;
-    height: 500px;
+    height: 420px;
     width: 100%;
     margin: 1 auto;
     position: top; 
+    cursor: pointer;
+    transition: -ms-transform 450ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+
     /* transition: all .2s ease-in-out; */
 
 
@@ -102,7 +122,8 @@ a:visited {
   }
   
   .hero:hover {
-    transform: scale(1.05);
+    display: inline-block;
+    transform: scale(1.01);
         opacity: 1;
 
   }
@@ -150,7 +171,7 @@ a:visited {
     top: 5%;
     right: 25px;
     z-index: 999;
-    color: #222;
+    color: white;
     font-size: 30px;
   }
   
@@ -159,5 +180,5 @@ a:visited {
   }
 
   .fa-arrow-right:before, .fa-arrow-left:before {
-    color: #222
+    color: white
   }
