@@ -8,7 +8,7 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json())
-app.use(express.static('./Client/Dist'))
+app.use('/:id', express.static('./Client/Dist'))
 app.use('/', heroesRouter)
 
 //app.get('/api/:id' function(req, res) )

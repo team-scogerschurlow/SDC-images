@@ -1,7 +1,5 @@
-// var axios = require('axios');
 var db = require ('../Database/index.js')
 
-// const retrieveListing = 
 
 exports.retrievePics = function (req, res) {
     var id = req.params.id;
@@ -10,6 +8,7 @@ exports.retrievePics = function (req, res) {
       res.send(data);
     })
     .catch(function(err) {
+      console.log(err)
       res.status(500).send(err);
     })
 }

@@ -7,8 +7,13 @@ import LeftArrow from './LeftArrow.jsx';
 import Skull from './skull.jsx';
 import Hero from './hero.jsx';
 
-
-
+const getListingId = (url) => {
+  var id = url.slice(-4).split('');
+  id = id.filter((element) => element != '/');
+  id = id.join('')
+  return Number(id);
+}
+ 
 class Slider extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +23,8 @@ class Slider extends React.Component {
             listing: '',
             currentIndex: 0,
             translateValue: 0,
-            view: false
+            view: false,
+            listingId: getListingId(document.URL),
         };
         this.goToNextSlide = this.goToNextSlide.bind(this);
         this.goToPrevSlide = this.goToPrevSlide.bind(this);
@@ -28,7 +34,7 @@ class Slider extends React.Component {
     }
 
     componentDidMount () {
-        this.loadPics(31);
+        this.loadPics(this.state.listingId);
     //    setTimeout(console.log(this.state), 50000) 
 
     }
@@ -144,11 +150,3 @@ class Slider extends React.Component {
 }
 
 export default Slider
-
-/*"https://i.imgur.com/M4YeUei.jpg",
-                     "https://i.imgur.com/BXWwCKd.jpg",
-                     "https://i.imgur.com/zstzmyJ.jpg",
-                     "https://i.imgur.com/xfNXg6a.jpg",
-                     "https://i.imgur.com/cLpJWYR.jpg"
-        
-        */
