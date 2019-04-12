@@ -1,5 +1,6 @@
 const heroesRouter = require('./router.js')
 
+// const baseUrl = 'http://ec2-34-209-162-9.us-west-2.compute.amazonaws.com:3000/heroes/60'
 
 const express = require('express');
 

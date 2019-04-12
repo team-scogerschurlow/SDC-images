@@ -170,7 +170,9 @@ knex seed:run
 
 docker restart <app container name>
 
--then vist localhost:3000 in your browser. 
+-then vist localhost:3000/<listingid> in your browser. 
+
+<!-- (window.location.pathname).match(/\d+/)[0] -->
 
 
 
