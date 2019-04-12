@@ -35,8 +35,6 @@ class Slider extends React.Component {
 
     componentDidMount () {
         this.loadPics(this.state.listingId);
-    //    setTimeout(console.log(this.state), 50000) 
-
     }
     
     loadPics (listingId) {

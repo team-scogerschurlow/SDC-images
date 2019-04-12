@@ -2,6 +2,8 @@ var db = require ('../Database/index.js')
 
 
 exports.retrievePics = function (req, res) {
+    
+
     var id = req.params.id;
     db('pics').where('listings_id', id)
     .then(function(data) {
@@ -12,3 +14,5 @@ exports.retrievePics = function (req, res) {
       res.status(500).send(err);
     })
 }
+
+
