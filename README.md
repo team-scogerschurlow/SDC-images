@@ -137,7 +137,7 @@ docker-compose up
 
 enterinto mysql container, 
 
-docker exec -it <name of container> /bin/bash     
+docker exec -it <name of container> /bin/bash      
 
 -create heroes table, 
 
@@ -177,6 +177,17 @@ pushing to docker
 https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
 
 <!-- (window.location.pathname).match(/\d+/)[0] -->
+
+// DOCKER PUSH
+
+docker login --username=yourhubusername
+
+docker tag <image id> yourhubusername/<dockerhub repo>:<tag for the instance in repo>
+
+EX: docker tag 07e0f4560124 jasonasav/hero_module:faster  
+
+docker push yourhubusername/<dockerhub repo>
+
 
 
 
