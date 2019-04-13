@@ -172,6 +172,10 @@ docker restart <app container name>
 
 -then vist localhost:3000/<listingid> in your browser. 
 
+pushing to docker
+
+https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
 <!-- (window.location.pathname).match(/\d+/)[0] -->
 
 
