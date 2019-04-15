@@ -131,6 +131,71 @@ docker run -d -p 2000:8080 -v $(pwd):/src/app --name psychic_container2 colorser
 
 docker logs psychic_container <shows log of what has happened>
 
+Docker commands 
+
+docker-compose up
+
+enterinto mysql container, 
+
+docker exec -it <name of container> /bin/bash      
+
+-create heroes table, 
+
+mysql -u root -p
+
+<enter PW>
+
+-then
+
+create database heroes
+
+-now in new terminal enter into app heroes container
+
+docker exec -it <name of container> /bin/bash     
+
+-global install knex
+
+npm install -g knex 
+
+-then create tables 
+
+knex migrate:latest
+
+-then seed data
+
+knex seed:run
+
+
+-then restart app container
+
+docker restart <app container name>
+
+-then vist localhost:3000/<listingid> in your browser. 
+
+pushing to docker
+
+https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
+<!-- (window.location.pathname).match(/\d+/)[0] -->
+
+// DOCKER PUSH
+
+docker login --username=yourhubusername
+
+docker tag <image id> yourhubusername/<dockerhub repo>:<tag for the instance in repo>
+
+EX: docker tag 07e0f4560124 jasonasav/hero_module:faster  
+
+docker push yourhubusername/<dockerhub repo>
+
+
+
+
+
+
+
+
+
 
 
 

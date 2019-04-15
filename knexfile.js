@@ -3,10 +3,11 @@
     development: {
       client: 'mysql',
       connection: {
-        host: '127.0.0.1',
+        host: 'database',
         database: 'heroes',
         user:     'root',
-        password: ''
+        password: 'secret-33-sauce',
+        port: '3306'
       },
       pool: {
         min: 2,
@@ -17,5 +18,28 @@
       }
     }
   };
+
+// LOCAL KNEX FILE
+
+  // module.exports = {
+  //   development: {
+  //     client: 'mysql',
+  //     connection: {
+  //       host: 'localhost',
+  //       database: 'heroes',
+  //       user:     'root',
+  //       password: ''
+  //     },
+  //     pool: {
+  //       min: 2,
+  //       max: 10
+  //     },
+  //     migrations: {
+  //       tableName: 'knex_migrations'
+  //     }
+  //   }
+  // };
+
+
 
 
