@@ -18,4 +18,9 @@ import Hero from './hero';
     //     const { wrapper } = setup();
     //     expect(wrapper.children()).toBeGreaterThan(0);
     //   });
+
+        // it('Should render a div', () => {
+    //     const { wrapper } = setup();
+    //     expect(wrapper.children()).toBeGreaterThan(0);
+    //   });
 });
