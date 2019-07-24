@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 
 import Hero from './hero';
 
-
   function setup() {
     const wrapper = mount(<Hero />);
     return { wrapper };
