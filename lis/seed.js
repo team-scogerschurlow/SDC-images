@@ -1,5 +1,6 @@
 const db  = require('./index.js');
 const Schema = require('./Schema.js');
+const fs = require('fs')
 
 let randomElement = function(array){
     var rand = array[(Math.random() * array.length) | 0];
@@ -23,51 +24,27 @@ let randomElement = function(array){
   }
 
   let random = function (id){
-    return obj = { 
-      id: id,
-      listing: randomElement(listings),
-      url: randomUrls(urls)
-    }
+    return id + ',' + randomElement(listings) + ',' + randomUrls(urls).toString(',')
   };
   
-  function fillArray() {
+  function fillArray(a, b) {
     const arr = []
-    for(i = 0; i <= 100000; i ++) {
+    for(i = a; i <= b; i ++) {
       arr.push(random(i+1))
     }
-    return arr;
+    return arr.join('\n');
   };
 
-const insertItems = function() {
-    const items = fillArray();
-    const promises = [];
-    for (const item of items) {
-        promises.push(Schema.insertMany(item, (err, res) => {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log(res);
-          }
-        }));
-    };
-    Promise.all(promises).then(() => db.disconnect());
-};
-
-insertItems();
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(0, 1000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(1000000, 2000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(2000000, 3000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(3000000, 4000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(4000000, 5000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(5000000, 6000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(6000000, 7000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(7000000, 8000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(8000000, 9000000)}`);
+  fs.appendFileSync(__dirname + '/data.csv', `${fillArray(9000000, 9999999)}`);
 
 
 
-// csv file with name, urls schema 
-// fs.appendSync 
-
-// fs.appendFile('filename.csv', fillArray(), (err) => {
-//     if (err) console.error('Couldn\'t append the data');
-//     console.log('The data was appended to file!');
-// });
-
-// const insertSampleBlogs = function() {
-//   Blog.create(samplePosts)
-//     .then(() => db.disconnect());
-// };
-
-// insertSampleBlogs();

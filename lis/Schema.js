@@ -8,7 +8,7 @@ const picsSchema = new mongoose.Schema({
   url: Array
 });
 
-const Pics = mongoose.model('Pics', picsSchema);
+const Pics = mongoose.model('Pics', picsSchema, 'Picz');
 
 module.exports = Pics;
 
