@@ -3,10 +3,10 @@
     development: {
       client: 'mysql',
       connection: {
-        host: 'database',
+        host: 'localhost',
         database: 'heroes',
         user:     'root',
-        password: 'secret-33-sauce',
+        password: '123',
         port: '3306'
       },
       pool: {

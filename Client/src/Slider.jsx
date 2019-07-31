@@ -17,7 +17,6 @@ const getListingId = (url) => {
 class Slider extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             images: [],
             listing: '',
@@ -30,66 +29,51 @@ class Slider extends React.Component {
         this.goToPrevSlide = this.goToPrevSlide.bind(this);
         this.loadPics = this.loadPics.bind(this);
         this.changeView = this.changeView.bind(this);
-
-    }
+    };
 
     componentDidMount () {
         this.loadPics(this.state.listingId);
-    }
+    };
     
     loadPics (listingId) {
-
-        axios.get(`http://ec2-34-209-162-9.us-west-2.compute.amazonaws.com:3000/heroes/${listingId}`)
-        .then( res => this.setState({images: res.data})
-        
-
-         )
+        // http://ec2-34-209-162-9.us-west-2.compute.amazonaws.com
+        axios.get(`http://localhost:3331/heroes/${listingId}`)
+        .then( res => this.setState({images: res.data}))
         .catch(
-         (err) => {console.log(err)}
+         (err) => {console.log(err)} 
         ) 
-        
-
-
-    }
+    };
 
     changeView (e) {
         this.setState(prevState => ({
             view: !prevState.view
-        }))
-
-    }
+        }));
+    };
     
     goToPrevSlide () {
-        
         if(this.state.currentIndex === 0) return;
         this.setState(prevState => ({
             currentIndex: prevState.currentIndex - 1,
             translateValue: prevState.translateValue + this.slideWidth()
-          }))
-
-    }
+          }));
+    };
 
     goToNextSlide () {
-
         if(this.state.currentIndex === this.state.images.length -1) {
             return this.setState({
                 currentIndex: 0,
                 translateValue: 0
-
-            })
-        }
+            });
+        };
         this.setState(prevState => ({
             currentIndex: prevState.currentIndex + 1,
             translateValue: prevState.translateValue + -(this.slideWidth())
-
-
-        }))
-
-    }
+        }));
+    };
 
     slideWidth() {
         return document.querySelector('.slide').clientWidth
-    }
+    };
 
     render () {
        if (this.state.view === true) { return (
@@ -105,25 +89,22 @@ class Slider extends React.Component {
                     <Slide key={i} image={image.url}/>
 
                 ))
-            
             }
             </div>
             </div>
             <LeftArrow 
             goToPrevSlide={this.goToPrevSlide} 
             />
-
             <RightArrow 
             goToNextSlide={this.goToNextSlide} 
             />
-
             <Skull 
             changeView={this.changeView} 
             />
-
             </div>
         );
-       } 
+       };
+        
        if (this.state.view === false) {
            return (
             // <div className="lander" onClick={this.changeView}>
@@ -138,13 +119,9 @@ class Slider extends React.Component {
             }
             </div>
             </div>
-        //   </div>
            )
-       }
-    }
-
-    
-    
-}
+       };
+    };
+};
 
 export default Slider
