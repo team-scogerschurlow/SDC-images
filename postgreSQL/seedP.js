@@ -1,6 +1,4 @@
-const db  = require('./index.js');
-const Schema = require('./Schema.js');
-const fs = require('fs')
+const fs = require('fs');
 
 let randomElement = function(array){
     var rand = array[(Math.random() * array.length) | 0];
@@ -21,7 +19,7 @@ let randomElement = function(array){
     result.push(randomElement(arrayUrls));
     result.push(randomElement(arrayUrls));
     return result;
-  }
+  };
 
   let random = function (id){
     return id + ',' + randomElement(listings) + ',' + randomUrls(urls).toString(',')
@@ -45,5 +43,6 @@ let randomElement = function(array){
   fs.appendFileSync(__dirname + '/dataP.csv', `${fillArray(7000001, 8000000) + '\n'}`);
   fs.appendFileSync(__dirname + '/dataP.csv', `${fillArray(8000001, 9000000) + '\n'}`);
   fs.appendFileSync(__dirname + '/dataP.csv', `${fillArray(9000001, 10000000)}`);
+
 
 

@@ -10,7 +10,8 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
     "compress": "npx webpack --config webpack.config.js",
-    "seed": "node lis/seed.js"
+    "seed": "node mongoDB/seed.js",
+    "seedP": "node postgreSQL/seedP.js"
   },
   "repository": {
     "type": "git",
