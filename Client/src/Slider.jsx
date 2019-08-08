@@ -37,7 +37,7 @@ class Slider extends React.Component {
     
     loadPics (listingId) {
         // http://ec2-34-209-162-9.us-west-2.compute.amazonaws.com
-        axios.get(`http://localhost:3331/heroes/${listingId}`)
+        axios.get(`http://localhost:4441/images/${listingId}`)
         .then( res => this.setState({images: res.data}))
         .catch(
          (err) => {console.log(err)} 
