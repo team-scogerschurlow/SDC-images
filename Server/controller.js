@@ -1,6 +1,5 @@
 var db = require ('../Database/index.js')
 
-
 exports.retrievePics = function (req, res) {
     var id = req.params.id;
     db('pics').where('listings_id', id)

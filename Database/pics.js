@@ -8,7 +8,6 @@ module.exports = [
     {listing: 'FlopHouse', url: 'https://i.imgur.com/oN83yWml.jpg' },
     {listing: 'FlopHouse', url: 'https://i.imgur.com/1zYntI7l.jpg' },
     {listing: 'FlopHouse', url: 'https://i.imgur.com/WfMKGrXl.jpg'}
-
 ]
 
 
